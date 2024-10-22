@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multistep Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="navbar">
+        <h3>Logo</h3>
+        <ul class="nav">
+          <li>BHK TYPE</li>
+          <li>Rooms to Design</li>
+          <li>Package</li>
+          <li>Get Quote</li>
+        </ul>
+      </div>
+
+      <!-- Multistep Form -->
+      <form id="multistepForm">
+        <!-- Step 1: BHK Type -->
+        <div class="step" id="step-1">
+          <h2>Select your BHK Type</h2>
+          <p>To know more about this, <a href="#">click here</a></p>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="bhkType"
+              id="1bhk"
+              value="1 BHK"
+            />
+            <label class="form-check-label" for="1bhk">1 BHK</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="bhkType"
+              id="2bhk"
+              value="2 BHK"
+            />
+            <label class="form-check-label" for="2bhk">2 BHK</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="bhkType"
+              id="3bhk"
+              value="3 BHK"
+            />
+            <label class="form-check-label" for="3bhk">3 BHK</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="bhkType"
+              id="4bhk"
+              value="4 BHK"
+            />
+            <label class="form-check-label" for="4bhk">4 BHK</label>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="nextStep(2)">
+            Next
+          </button>
+        </div>
+
+        <!-- Step 2: Rooms to Design -->
+        <div class="step" id="step-2">
+          <h2>Rooms to Design</h2>
+          <p>Select the rooms you’d like us to design</p>
+          <div class="form-group">
+            <label for="livingRoom">Living Room</label>
+            <input type="number" id="livingRoom" value="1" min="0" max="10" />
+          </div>
+          <div class="form-group">
+            <label for="kitchen">Kitchen</label>
+            <input type="number" id="kitchen" value="1" min="0" max="10" />
+          </div>
+          <div class="form-group">
+            <label for="bedroom">Bedroom</label>
+            <input type="number" id="bedroom" value="1" min="0" max="10" />
+          </div>
+          <div class="form-group">
+            <label for="bathroom">Bathroom</label>
+            <input type="number" id="bathroom" value="1" min="0" max="10" />
+          </div>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            onclick="previousStep(1)"
+          >
+            Back
+          </button>
+          <button type="button" class="btn btn-primary" onclick="nextStep(3)">
+            Next
+          </button>
+        </div>
+
+        <!-- Step 3: Package -->
+        <div class="step" id="step-3">
+          <h2>Pick your package</h2>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="package"
+              id="essentials"
+              value="Essentials"
+            />
+            <label class="form-check-label" for="essentials">
+              Essentials (₹₹)
+              <p>
+                A range of essential home interior solutions that's perfect for
+                all your needs.
+              </p>
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="package"
+              id="premium"
+              value="Premium"
+            />
+            <label class="form-check-label" for="premium">
+              Premium (₹₹₹)
+              <p>
+                Superior home interior solutions that will take your interiors
+                to the next level.
+              </p>
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="package"
+              id="luxe"
+              value="Luxe"
+            />
+            <label class="form-check-label" for="luxe">
+              Luxe (₹₹₹₹)
+              <p>
+                High-end interior solutions for the ultimate home interior
+                experience.
+              </p>
+            </label>
+          </div>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            onclick="previousStep(2)"
+          >
+            Back
+          </button>
+          <button type="button" class="btn btn-primary" onclick="nextStep(4)">
+            Next
+          </button>
+        </div>
+
+        <!-- Step 4: Get Quote -->
+        <div class="step" id="step-4">
+          <h2>Your estimate is almost ready</h2>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email ID</label>
+            <input type="email" class="form-control" id="email" required />
+          </div>
+          <div class="form-group">
+            <label for="property">Property Name</label>
+            <input type="text" class="form-control" id="property" required />
+          </div>
+          <p>
+            By submitting this form, you agree to the privacy policy & terms and
+            conditions
+          </p>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            onclick="previousStep(3)"
+          >
+            Back
+          </button>
+          <button type="submit" class="btn btn-success">Get Quote</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.navbar h3 {
+  margin: 0;
+}
+
+.nav {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav li {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
+}
+
+.btn {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
