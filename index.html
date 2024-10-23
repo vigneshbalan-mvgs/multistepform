@@ -3,202 +3,426 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Multistep Form</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+
+    <title>Multi-Step Form</title>
   </head>
   <body>
-    <div class="container mt-5">
-      <div class="navbar">
+    <!-- navbar  -->
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
         <h3>Logo</h3>
-        <ul class="nav">
-          <li>BHK TYPE</li>
-          <li>Rooms to Design</li>
-          <li>Package</li>
-          <li>Get Quote</li>
-        </ul>
+        <div class="progress-container">
+          <ul class="progress-nav">
+            <li class="progress-step active">
+              <span class="circle">1</span>
+              <span class="label">BHK</span>
+            </li>
+            <li class="progress-step">
+              <span class="circle">2</span>
+              <span class="label">Rooms</span>
+            </li>
+            <li class="progress-step">
+              <span class="circle">3</span>
+              <span class="label">Package</span>
+            </li>
+            <li class="progress-step">
+              <span class="circle">4</span>
+              <span class="label">Get Quote</span>
+            </li>
+          </ul>
+          <div class="progress-counter">1/4</div>
+        </div>
+      </div>
+    </nav>
+    <!-- form starting  -->
+    <form id="multiStepForm">
+      <!-- BHK Type  -->
+      <div class="form-step active container">
+        <div class="card">
+          <div class="cards-bg">
+            <h2 class="mb-4">BHK Type</h2>
+            <div class="card-body">
+              <div class="radio-group">
+                <div class="radio-group">
+                  <label class="custom-radio">
+                    <input type="radio" name="bhk" value="1 BHK" required />
+                    <span class="radio-btn"></span> 1 BHK
+                  </label>
+                  <div class="child-options" style="display: none">
+                    <label class="custom-radio">
+                      <input
+                        type="radio"
+                        name="size-1bhk"
+                        value="small"
+                        checked
+                      />
+                      <span class="radio-btn"></span> Small (Below 800 sq ft)
+                    </label>
+                    <label class="custom-radio">
+                      <input type="radio" name="size-1bhk" value="large" />
+                      <span class="radio-btn"></span> Large (Above 800 sq ft)
+                    </label>
+                  </div>
+
+                  <label class="custom-radio">
+                    <input type="radio" name="bhk" value="2 BHK" />
+                    <span class="radio-btn"></span> 2 BHK
+                  </label>
+                  <div class="child-options" style="display: none">
+                    <label class="custom-radio">
+                      <input
+                        type="radio"
+                        name="size-2bhk"
+                        value="small"
+                        checked
+                      />
+                      <span class="radio-btn"></span> Small (Below 800 sq ft)
+                    </label>
+                    <label class="custom-radio">
+                      <input type="radio" name="size-2bhk" value="large" />
+                      <span class="radio-btn"></span> Large (Above 800 sq ft)
+                    </label>
+                  </div>
+
+                  <label class="custom-radio">
+                    <input type="radio" name="bhk" value="3 BHK" />
+                    <span class="radio-btn"></span> 3 BHK
+                  </label>
+                  <div class="child-options" style="display: none">
+                    <label class="custom-radio">
+                      <input
+                        type="radio"
+                        name="size-3bhk"
+                        value="small"
+                        checked
+                      />
+                      <span class="radio-btn"></span> Small (Below 800 sq ft)
+                    </label>
+                    <label class="custom-radio">
+                      <input type="radio" name="size-3bhk" value="large" />
+                      <span class="radio-btn"></span> Large (Above 800 sq ft)
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="button-group mt-4">
+              <button
+                type="button"
+                class="back-btn"
+                onclick="goToPreviousStep()"
+                disabled
+              >
+                Back
+              </button>
+              <button type="button" class="next-btn" onclick="goToNextStep()">
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Multistep Form -->
-      <form id="multistepForm">
-        <!-- Step 1: BHK Type -->
-        <div class="step" id="step-1">
-          <h2>Select your BHK Type</h2>
-          <p>To know more about this, <a href="#">click here</a></p>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="bhkType"
-              id="1bhk"
-              value="1 BHK"
-            />
-            <label class="form-check-label" for="1bhk">1 BHK</label>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="bhkType"
-              id="2bhk"
-              value="2 BHK"
-            />
-            <label class="form-check-label" for="2bhk">2 BHK</label>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="bhkType"
-              id="3bhk"
-              value="3 BHK"
-            />
-            <label class="form-check-label" for="3bhk">3 BHK</label>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="bhkType"
-              id="4bhk"
-              value="4 BHK"
-            />
-            <label class="form-check-label" for="4bhk">4 BHK</label>
-          </div>
-          <button type="button" class="btn btn-primary" onclick="nextStep(2)">
-            Next
-          </button>
-        </div>
+      <!-- Room -->
+      <div class="form-step container">
+        <div class="card">
+          <div class="cards-bg">
+            <h2>Rooms to Design</h2>
+            <p>Select the rooms you’d like us to design</p>
+            <p>
+              To know more about this, <a href="#" class="link">click here</a>
+            </p>
 
-        <!-- Step 2: Rooms to Design -->
-        <div class="step" id="step-2">
-          <h2>Rooms to Design</h2>
-          <p>Select the rooms you’d like us to design</p>
-          <div class="form-group">
-            <label for="livingRoom">Living Room</label>
-            <input type="number" id="livingRoom" value="1" min="0" max="10" />
-          </div>
-          <div class="form-group">
-            <label for="kitchen">Kitchen</label>
-            <input type="number" id="kitchen" value="1" min="0" max="10" />
-          </div>
-          <div class="form-group">
-            <label for="bedroom">Bedroom</label>
-            <input type="number" id="bedroom" value="1" min="0" max="10" />
-          </div>
-          <div class="form-group">
-            <label for="bathroom">Bathroom</label>
-            <input type="number" id="bathroom" value="1" min="0" max="10" />
-          </div>
-          <button
-            type="button"
-            class="btn btn-secondary"
-            onclick="previousStep(1)"
-          >
-            Back
-          </button>
-          <button type="button" class="btn btn-primary" onclick="nextStep(3)">
-            Next
-          </button>
-        </div>
+            <div class="package-option">
+              <label for="living-room">Living Room</label>
+              <input
+                type="number"
+                id="living-room"
+                class="room-input"
+                min="0"
+                max="1"
+                value="1"
+              />
+            </div>
 
-        <!-- Step 3: Package -->
-        <div class="step" id="step-3">
-          <h2>Pick your package</h2>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="package"
-              id="essentials"
-              value="Essentials"
-            />
-            <label class="form-check-label" for="essentials">
-              Essentials (₹₹)
-              <p>
-                A range of essential home interior solutions that's perfect for
-                all your needs.
-              </p>
-            </label>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="package"
-              id="premium"
-              value="Premium"
-            />
-            <label class="form-check-label" for="premium">
-              Premium (₹₹₹)
-              <p>
-                Superior home interior solutions that will take your interiors
-                to the next level.
-              </p>
-            </label>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="package"
-              id="luxe"
-              value="Luxe"
-            />
-            <label class="form-check-label" for="luxe">
-              Luxe (₹₹₹₹)
-              <p>
-                High-end interior solutions for the ultimate home interior
-                experience.
-              </p>
-            </label>
-          </div>
-          <button
-            type="button"
-            class="btn btn-secondary"
-            onclick="previousStep(2)"
-          >
-            Back
-          </button>
-          <button type="button" class="btn btn-primary" onclick="nextStep(4)">
-            Next
-          </button>
-        </div>
+            <div class="package-option">
+              <label for="kitchen">Kitchen</label>
+              <input
+                type="number"
+                id="kitchen"
+                class="room-input"
+                min="0"
+                max="1"
+                value="1"
+              />
+            </div>
 
-        <!-- Step 4: Get Quote -->
-        <div class="step" id="step-4">
-          <h2>Your estimate is almost ready</h2>
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email ID</label>
-            <input type="email" class="form-control" id="email" required />
-          </div>
-          <div class="form-group">
-            <label for="property">Property Name</label>
-            <input type="text" class="form-control" id="property" required />
-          </div>
-          <p>
-            By submitting this form, you agree to the privacy policy & terms and
-            conditions
-          </p>
-          <button
-            type="button"
-            class="btn btn-secondary"
-            onclick="previousStep(3)"
-          >
-            Back
-          </button>
-          <button type="submit" class="btn btn-success">Get Quote</button>
-        </div>
-      </form>
-    </div>
+            <div class="package-option">
+              <label for="bedroom">Bedroom</label>
+              <input
+                type="number"
+                id="bedroom"
+                class="room-input"
+                min="0"
+                max="1"
+                value="1"
+              />
+            </div>
 
+            <div class="package-option">
+              <label for="bathroom">Bathroom</label>
+              <input
+                type="number"
+                id="bathroom"
+                class="room-input"
+                min="0"
+                max="1"
+                value="1"
+              />
+            </div>
+
+            <div class="button-group mt-4">
+              <button
+                type="button"
+                class="back-btn"
+                onclick="goToPreviousStep()"
+              >
+                Back
+              </button>
+              <button type="button" class="next-btn" onclick="goToNextStep()">
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- package -->
+      <div class="form-step container">
+        <div class="card">
+          <div class="cards-bg">
+            <div class="mt-4">
+              <div class="row">
+                <!-- columns -->
+                <div class="col-12 mb-3 col-group package-text card-select">
+                  <label
+                    for="option1"
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="d-flex align-items-center">
+                      <input
+                        type="radio"
+                        name="selectedOption"
+                        id="option1"
+                        value="option1"
+                        class="display-none custom-radio me-2"
+                      />
+                      <div class="text-left">
+                        <h5 class="card-title">Option Title 1 (₹₹)</h5>
+                        <p class="card-text">
+                          A brief description of the option.
+                        </p>
+                      </div>
+                    </div>
+                  </label>
+
+                  <div class="image-container mt-3">
+                    <picture>
+                      <source
+                        media="(max-width: 600px)"
+                        srcset="path/to/mobile-image1.jpg"
+                      />
+                      <source
+                        media="(min-width: 601px)"
+                        srcset="path/to/desktop-image1.jpg"
+                      />
+                      <img
+                        src="path/to/default-image1.jpg"
+                        class="img-fluid rounded-top"
+                        alt="Option Image"
+                        style="background-color: var(--on-background-20)"
+                      />
+                    </picture>
+                  </div>
+
+                  <ul class="list-group list-group-flush mt-3">
+                    <li class="list-group-item">Feature 1</li>
+                    <li class="list-group-item">Feature 2</li>
+                    <li class="list-group-item">Feature 3</li>
+                  </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-12 mb-3 col-group package-text card-select">
+                  <label
+                    for="option2"
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="d-flex align-items-center">
+                      <input
+                        type="radio"
+                        name="selectedOption"
+                        id="option2"
+                        value="option2"
+                        class="display-none custom-radio me-2"
+                      />
+                      <div class="text-left">
+                        <h5 class="card-title">Option Title 2 (₹₹)</h5>
+                        <p class="card-text">
+                          A brief description of the option.
+                        </p>
+                      </div>
+                    </div>
+                  </label>
+
+                  <div class="image-container mt-3">
+                    <picture>
+                      <source
+                        media="(max-width: 600px)"
+                        srcset="path/to/mobile-image2.jpg"
+                      />
+                      <source
+                        media="(min-width: 601px)"
+                        srcset="path/to/desktop-image2.jpg"
+                      />
+                      <img
+                        src="path/to/default-image2.jpg"
+                        class="img-fluid rounded-top"
+                        alt="Option Image"
+                        style="background-color: var(--on-background-20)"
+                      />
+                    </picture>
+                  </div>
+
+                  <ul class="list-group list-group-flush mt-3">
+                    <li class="list-group-item">Feature 1</li>
+                    <li class="list-group-item">Feature 2</li>
+                    <li class="list-group-item">Feature 3</li>
+                  </ul>
+                </div>
+                <div class="button-group mt-4">
+                  <button
+                    type="button"
+                    class="back-btn"
+                    onclick="goToPreviousStep()"
+                  >
+                    Back
+                  </button>
+                  <button
+                    type="button"
+                    class="next-btn"
+                    onclick="goToNextStep()"
+                  >
+                    Next
+                  </button>
+                </div>
+
+                <!-- Repeat for additional cards -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-step container">
+        <div class="card">
+          <div class="cards-bg">
+            <h2>Your Estimate is Almost Ready</h2>
+
+            <!-- Name Input -->
+            <div class="mb-3">
+              <input
+                type="text"
+                id="name"
+                class="form-control"
+                placeholder="Name"
+                required
+              />
+            </div>
+
+            <!-- Email Input -->
+            <div class="mb-3">
+              <input
+                type="email"
+                id="email"
+                class="form-control"
+                placeholder="Email"
+                required
+              />
+            </div>
+
+            <!-- Phone Number Input with Country Code -->
+            <div class="mb-3">
+              <div class="input-group">
+                <select class="form-select" id="countryCode" required>
+                  <option value="" disabled selected>
+                    Select Country Code
+                  </option>
+                  <option value="+1">USA (+1)</option>
+                  <option value="+91">India (+91)</option>
+                  <option value="+44">UK (+44)</option>
+                </select>
+                <input
+                  type="tel"
+                  id="phone"
+                  class="form-control"
+                  placeholder="Phone Number"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Checkbox for WhatsApp Updates -->
+            <div class="mb-3 form-check">
+              <input
+                type="checkbox"
+                id="whatsappUpdates"
+                class="form-check-input"
+              />
+              <label for="whatsappUpdates" class="form-check-label"
+                >Send me updates on WhatsApp</label
+              >
+            </div>
+
+            <!-- Property Name Input -->
+            <div class="mb-3">
+              <input
+                type="text"
+                id="property"
+                class="form-control"
+                placeholder="Property Name"
+                required
+              />
+            </div>
+
+            <!-- Privacy Policy and Terms -->
+            <p>
+              By submitting this form, you agree to the
+              <a href="#" class="link">privacy policy</a> &
+              <a href="#" class="link">terms and conditions</a>.
+            </p>
+
+            <div class="button-group mt-4">
+              <button
+                type="button"
+                class="back-btn"
+                onclick="goToPreviousStep()"
+              >
+                Back
+              </button>
+              <button type="button" class="next-btn" onclick="goToNextStep()">
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
     <script src="script.js"></script>
   </body>
 </html>
